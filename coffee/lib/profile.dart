@@ -8,6 +8,7 @@ class ProfilePage extends StatefulWidget {
 }
 
 class _ProfilePageState extends State<ProfilePage> {
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -23,7 +24,7 @@ class _ProfilePageState extends State<ProfilePage> {
                     child: Image.asset(
                       "assets/image/man.jpg",
                       height: 400,
-                      width: 502,
+                      width: MediaQuery.of(context).size.width,
                       fit: BoxFit.cover,
                     ),
                   ),

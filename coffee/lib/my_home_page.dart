@@ -36,7 +36,7 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
             ),
             const SizedBox(
-              width: 100,
+              width: 60,
             ),
             const Icon(
               Icons.location_on_outlined,
@@ -57,7 +57,7 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
             ),
             const SizedBox(
-              width: 100,
+              width: 60,
             ),
             GestureDetector(
               onTap: () {
@@ -78,41 +78,84 @@ class _MyHomePageState extends State<MyHomePage> {
           ],
         ),
       ),
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Container(
-                height: 60,
-                width: 440,
-                decoration: BoxDecoration(
-                  color: const Color.fromARGB(255, 178, 177, 177),
-                  borderRadius: BorderRadius.circular(
-                    30,
-                  ), // Adjust the radius as needed
-                ),
-                child: IconButton(
-                  onPressed: () {
-                    showSearch(
-                      context: context,
-                      delegate: CustomSearchDelegate(),
-                    );
-                  },
-                  icon: const Padding(
-                    padding: EdgeInsets.only(right: 370),
-                    child: Icon(
-                      Icons.search,
-                      size: 28,
-                      color: Colors.white,
+      body: SingleChildScrollView(
+        child: Column(
+          // mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Row(
+              // mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Container(
+                  height: 70,
+                  width: MediaQuery.of(context).size.width,
+                  decoration: BoxDecoration(
+                    color: const Color.fromARGB(255, 178, 177, 177),
+                    borderRadius: BorderRadius.circular(
+                      30,
+                    ), // Adjust the radius as needed
+                  ),
+                  child: IconButton(
+                    onPressed: () {
+                      showSearch(
+                        context: context,
+                        delegate: CustomSearchDelegate(),
+                      );
+                    },
+                    icon: const Padding(
+                      padding: EdgeInsets.only(right: 350),
+                      child: Icon(
+                        Icons.search,
+                        size: 32,
+                        color: Colors.white,
+                      ),
                     ),
                   ),
                 ),
+              ],
+            ),
+            const SizedBox(
+              height: 40,
+            ),
+          const   Padding(
+              padding: EdgeInsets.only(right: 180,),
+              child: Text(
+                "Categories",
+                style: TextStyle(
+                  color: Colors.black,
+                  fontSize: 30,
+                  fontWeight: FontWeight.bold,
+                ),
               ),
-            ],
-          )
-        ],
+            ),
+        const  SizedBox(height: 10,),
+            Padding(
+              padding: const EdgeInsets.only(left: 40),
+              child: Row(
+                children: [
+                  Container(
+                    width: 110,
+                    height: 40,
+                    decoration: BoxDecoration(
+                      color: Colors.amber,
+                      borderRadius:BorderRadius.circular(30,) ),
+                      child: const Center(
+                        child: Text(
+                      "Latte",
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 25,
+                      
+                      ),
+                     ),
+                      
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            // const  NameOfCoffee(coffee:"Latte",colors: Colors.red,width: 50, height: 25,),
+          ],
+        ),
       ),
     );
   }
@@ -133,8 +176,12 @@ class CustomSearchDelegate extends SearchDelegate {
     "Iced Coffee",
     "Iced Espresso",
     "Cold Brew",
+    "Caffee Amercina",
+    "Coratado",
+    "Liqueur coffee",
+    "Frappé",
+    "Ice shot",
   ];
-
   @override
   List<Widget> buildActions(BuildContext context) {
     return [
@@ -172,13 +219,14 @@ class CustomSearchDelegate extends SearchDelegate {
       }
     }
     return ListView.builder(
-        itemCount: matchQuery.length,
-        itemBuilder: (context, index) {
-          var result = matchQuery[index];
-          return ListTile(
-            title: Text(result),
-          );
-        });
+      itemCount: matchQuery.length,
+      itemBuilder: (context, index) {
+        var result = matchQuery[index];
+        return ListTile(
+          title: Text(result),
+        );
+      },
+    );
   }
 
   @override
@@ -190,12 +238,13 @@ class CustomSearchDelegate extends SearchDelegate {
       }
     }
     return ListView.builder(
-        itemCount: matchQuery.length,
-        itemBuilder: (context, index) {
-          var result = matchQuery[index];
-          return ListTile(
-            title: Text(result),
-          );
-        });
+      itemCount: matchQuery.length,
+      itemBuilder: (context, index) {
+        var result = matchQuery[index];
+        return ListTile(
+          title: Text(result),
+        );
+      },
+    );
   }
 }
