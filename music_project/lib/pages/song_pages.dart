@@ -22,7 +22,7 @@ class SongPage extends StatelessWidget {
                   children: [
                     //back button
                     IconButton(
-                      onPressed: () {},
+                      onPressed: () {Navigator.pop(context);},
                       icon: const Icon(
                         Icons.arrow_back,
                       ),
@@ -31,6 +31,7 @@ class SongPage extends StatelessWidget {
                     const Text(
                       "P L A Y L I S Y",
                       style: TextStyle(
+                        fontSize: 26,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
@@ -43,6 +44,7 @@ class SongPage extends StatelessWidget {
                     ),
                   ],
                 ),
+                SizedBox(height: 30,),
                 //album artwork
                 NeuBox(
                   child: Column(
@@ -100,8 +102,10 @@ class SongPage extends StatelessWidget {
                         ],
                       ),
 
-                      SliderTheme(data:SliderTheme.of(context).copyWith(
-                        thumbShape: RoundSliderThumbShape(enabledThumbRadius: 0),
+                      SliderTheme(
+                        data:SliderTheme.of(context).copyWith(
+                        thumbShape: 
+                        const RoundSliderThumbShape(enabledThumbRadius: 0),
                       ),
                        child: Slider(
                         min: 0,
@@ -109,14 +113,49 @@ class SongPage extends StatelessWidget {
                         value: 50, 
                         activeColor: Colors.green,
                         onChanged: (value) {
-                         
-                         })
-                        ) 
-                       
+                          },
+                         ),
+                        ),
                       ],
                     ),
                   ),
                 //playBack
+                 Row(
+                  children: [
+                   Expanded(
+                     child: GestureDetector(
+                      onTap: () {},
+                       child: NeuBox(
+                        child: Icon(Icons.skip_previous),
+                       ),
+                     ),
+                   )
+                  ],
+                 ),
+                   Row(
+                  children: [
+                   Expanded(
+                     child: GestureDetector(
+                      onTap: () {},
+                       child: NeuBox(
+                        child: Icon(Icons.play_arrow),
+                       ),
+                     ),
+                   )
+                  ],
+                 ),
+                    Row(
+                  children: [
+                   Expanded(
+                     child: GestureDetector(
+                      onTap: () {},
+                       child: NeuBox(
+                        child: Icon(Icons.play_arrow),
+                       ),
+                     ),
+                   )
+                  ],
+                 ),
               ],
             ),
           ),
