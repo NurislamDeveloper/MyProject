@@ -14,15 +14,15 @@ class PlaylistProvider extends ChangeNotifier {
     ),
     Song(
       albumArtImagePath: "assets/image/miagi2.jpg",
-      audioPath: "song/MiyaGi.mp3",
+      audioPath: "song/patron.mp3",
       songName: "Samuray",
       artistName: "M I A G I",
     ),
     Song(
       albumArtImagePath: "assets/image/miagi3.jpg",
-      audioPath: "song/MiyaGi.mp3",
-      songName: "Panda",
-      artistName: "M I A G I",
+      audioPath: "song/samuray.mp3",
+      songName: "Patron",
+      artistName: "P A N D A",
     ),
   ];
 
@@ -127,14 +127,14 @@ void play () async {
   });
 
   //listen for current duration
-  _audioPlayer.onDurationChanged.listen((newPosition) { 
+  _audioPlayer.onPositionChanged.listen((newPosition) { 
     _currentDuration = newPosition;
     notifyListeners();
   });
 
   //listenfor song completion
-  _audioPlayer.onDurationChanged.listen((event) {
-    playNextSong();
+  _audioPlayer.onPlayerComplete.listen((event) {
+    // playNextSong();
    });
 
  }

@@ -24,7 +24,7 @@ class NeuBox extends StatelessWidget {
             color:isDarkMode ? Colors.grey.shade800: Colors.white,
             blurRadius: 15,
             offset:const   Offset(-4, -4)
-          )
+          ),
        ],
       ),
       padding:const EdgeInsets.all(12),
