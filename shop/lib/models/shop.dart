@@ -14,19 +14,19 @@ class Shop extends ChangeNotifier  {
       name: "Product 1",
       price: 99.99,
       decoration: "item decraption ",
-             imagePath: 'assets/nike.png',
+             imagePath: 'assets/shirt.png',
     ),
       Products(
       name: "Product 1",
       price: 99.99,
       decoration: "item decraption ",
-             imagePath: 'assets/nike.png',
+             imagePath: 'assets/watch.png',
     ),
       Products(
       name: "Product 1",
       price: 99.99,
       decoration: "item decraption ",
-             imagePath: 'assets/nike.png',
+             imagePath: 'assets/pn.png',
     ),
 
   ];
